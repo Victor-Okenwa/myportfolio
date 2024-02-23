@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { faGithub, faTelegram } from '@fortawesome/free-brands-svg-icons';
-import { faBoxesAlt, faCode, faEnvelope, faFileAlt, faLightbulb, faPhoneSquare } from '@fortawesome/free-solid-svg-icons';
+import { faBoxesAlt, faCode, faEnvelope, faDownload, faLightbulb, faPhoneSquare } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Typed from 'typed.js';
 import MyModal from './MyModal';
@@ -63,8 +63,8 @@ const Home = () => {
                 <FontAwesomeIcon icon={faGithub} />
                 View GitHub
               </a>
-              <button className='btn' data-aos="slide-left" onClick={handleModalShow}>
-                <FontAwesomeIcon icon={faFileAlt} />
+              <button type="button" className='btn' data-aos="slide-left" onClick={handleModalShow}>
+                <FontAwesomeIcon icon={faDownload} />
                 View CV</button>
             </div>
           </div>

@@ -1,6 +1,22 @@
 import { action, createStore, thunk } from "easy-peasy";
 
 export default createStore({
+    isLoading: true,
+    setIsLoading: action((state, payload) => {
+        state.isLoading = payload;
+    }),
+    handlePreload: thunk((actions, payload, helpers) => {
+        try {
+            actions.setIsLoading(false);
+            const preloader = document.querySelector('.preloader');
+            preloader.classList.add('no-opacity');
+            setTimeout(() => {
+                preloader.classList.add('hidden');
+            }, 1050);
+        } catch (err) {
+            console.log(err);
+        }
+    }),
     theme: false,
     setTheme: action((state, payload) => {
         state.theme = payload;
@@ -75,5 +91,4 @@ export default createStore({
             console.log(err);
         }
     })
-
 });

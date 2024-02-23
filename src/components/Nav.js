@@ -13,17 +13,11 @@ const Nav = () => {
     const handleNavToggle = () => {
         navToggle ? setNavToggle(false) : setNavToggle(true);
     }
-
-    // useEffect(() => {
-
-    // }, []);
-
     return (
         <nav className='Nav navbar navbar-lg'>
-            <div className="navbar-brand btn"><FontAwesomeIcon icon={faBriefcase
-            } />
+            <div className="navbar-brand btn">
+                <FontAwesomeIcon icon={faBriefcase} />
             </div>
-            {/* onClick={{handleThemeChange }} */}
             <div className="theme">
                 <button className="theme-button btn" onClick={toggleTheme}>
                     {!theme && <FontAwesomeIcon icon={faSun} />}

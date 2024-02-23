@@ -92,6 +92,14 @@ html {
     font-family: $Jost !important;
 }
 
+.no-opacity {
+    opacity: 0 !important;
+}
+
+.hidden {
+    visibility: hidden !important;
+}
+
 
 body {
     display: flex;
@@ -120,6 +128,19 @@ li {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+
+    .preloader {
+        position: fixed;
+        opacity: 1;
+        left: 0;
+        top: 0;
+        z-index: 99;
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+        background: #fff url('../../public/images/preloader.gif') no-repeat center center;
+        transition: opacity 1s ease;
+    }
 
     .Nav {
         background-color: $Background;
@@ -373,6 +394,7 @@ li {
                             button {
                                 border: 1px solid $Grey;
                                 background-color: $Grey;
+                                color: #111;
 
                                 &:hover {
                                     box-shadow: inset 0px 0px 5px $Full-Black;
@@ -507,7 +529,7 @@ li {
                                                 height: 10px;
                                                 background: $Dark-Grey;
 
-                                                .progress-bar{
+                                                .progress-bar {
                                                     background: $Text-Color;
                                                 }
                                             }
@@ -798,5 +820,3 @@ li {
         }
     }
 }
-
-// @media only screen and (max-width: 430px) {}

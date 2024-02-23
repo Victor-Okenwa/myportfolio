@@ -6,6 +6,8 @@ import BackTop from './components/BackTop';
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Preloader from './components/Preloader';
+import useWindowLoad from './components/hooks/useWindowLoad';
 
 function App() {
   useEffect(() => {
@@ -16,10 +18,12 @@ function App() {
     });
   }, []);
 
+  useWindowLoad();
   (useWindowScroll());
 
   return (
     <div className={`App dark`} >
+      <Preloader />
       <Nav />
       <Home />
       <Footer />

@@ -51,20 +51,6 @@ const MyModal = () => {
                 </div>
             </div>
         </div>
-
-        // <Modal show={showModal} onHide={handleModalClose}>
-        //     <Modal.Header closeButton>
-        //         <Modal.Title></Modal.Title>
-        //     </Modal.Header>
-        //     <Modal.Body>
-        //         <iframe
-        //             src="/okenwa_victor_resume.pdf"
-        //             width="100%"
-        //             height="600px"
-        //             title="PDF Viewer"
-        //         />
-        //     </Modal.Body>
-        // </Modal>
     )
 }
 export default MyModal;

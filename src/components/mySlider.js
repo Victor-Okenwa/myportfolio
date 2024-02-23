@@ -1,13 +1,10 @@
 import React from 'react';
 import OwlCarousel from 'react-owl-carousel';
-import $ from 'jquery';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBootstrap, faCss3, faGit, faHtml5, faNodeJs, faPhp, faReact, faSass } from '@fortawesome/free-brands-svg-icons';
 import { faChain, faDatabase } from '@fortawesome/free-solid-svg-icons';
-window.jQuery = $;
-window.$ = $;
 const responsive = {
     0: {
         items: 1
@@ -205,8 +202,7 @@ const OwlSlider = () => {
                     </div>
                 </div>
             </div>
-        </OwlCarousel>
-    )
+        </OwlCarousel>)
 }
 
 export default OwlSlider;

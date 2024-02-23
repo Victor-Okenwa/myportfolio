@@ -49,6 +49,14 @@ html {
   font-family: "Jost", sans-serif !important;
 }
 
+.no-opacity {
+  opacity: 0 !important;
+}
+
+.hidden {
+  visibility: hidden !important;
+}
+
 body {
   display: flex;
   -webkit-text-size-adjust: 100%;
@@ -80,11 +88,24 @@ li {
   # Footer Section
   --------------------------------------------------------------*/
 }
+.App .preloader {
+  position: fixed;
+  opacity: 1;
+  left: 0;
+  top: 0;
+  z-index: 99;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  background: #fff url("../../public/images/preloader.gif") no-repeat center center;
+  transition: opacity 1s ease;
+}
 .App .Nav {
   background-color: #FFFFFF;
   height: 70px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   position: sticky;
   top: 0;
   flex-wrap: wrap;
@@ -304,6 +325,7 @@ li {
 .App .Home section.portfolio .portfolio-box .portfolio-contents .portfolio-btns button {
   border: 1px solid #eee;
   background-color: #eee;
+  color: #111;
 }
 .App .Home section.portfolio .portfolio-box .portfolio-contents .portfolio-btns button:hover {
   box-shadow: inset 0px 0px 5px #111;
