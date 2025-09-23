@@ -5,13 +5,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Typed from 'typed.js';
 import MyModal from './MyModal';
 import { useStoreActions } from 'easy-peasy';
-import OwlSlider from './mySlider';
+// import OwlSlider from './mySlider';
 
 const Home = () => {
   const el = useRef(null);
   useEffect(() => {
     const typed = new Typed(el.current, {
-      strings: ['Designer.', 'Developer.', 'Freelancer.'],
+      strings: ['Designer.', 'Developer.', 'Programmer', 'Engineer.', 'Creator.', 'Freelancer.'],
       showCursor: false,
       loop: true,
       typeSpeed: 100,
@@ -26,25 +26,27 @@ const Home = () => {
   }, []);
 
   const today = new Date();
-  const experience = parseInt(today.getFullYear()) - 2021;
+  const experience = today.getFullYear() - 2021;
 
   const handleModalShow = useStoreActions(action => action.handleModalShow);
 
   return (
-    <main className="Home">
-      <section id='home' className="hero container-fluid">
-        <div className="overlay"></div>
-        <div className="hero-content">
-          <h1 className="hero-title mb-4" data-aos="slide-down">I am Okenwa Victor</h1>
-          <div className="hero-subtitle-box">
-            <p className="hero-subtitle" ref={el}><span className="typed"></span></p>
+    <main className="overflow-x-hidden">
+      <section id='home' className="relative min-h-screen w-screen bg-cover bg-center bg-fixed bg-[url('../../../public/images/codingman2.jpg')]">
+        <div className="absolute bg-primary-foreground/80 backdrop-blur-xs size-full"></div>
+        <div className="text-center absolute w-[95%] h-full flex justify-center items-center flex-col">
+          <h1 className="text-5xl md:text-6xl bg-gradient-to-r from-blue-500 to-pink-500 text-transparent bg-clip-text inline-block" data-aos="slide-down">Hi, I am Victor</h1>
+          <div className="text-2xl md:text-3xl mt-2 text-secondary-foreground/80" data-aos="slide-up">
+            <span className="" ref={el}></span>
+            <span className="animate-caret-blink">|</span>
           </div>
         </div>
       </section>
 
-      <section id='about' className="about">
-        <div className="section-head">
-          <h2>A LITTLE <span>ABOUT</span> ME</h2>
+      <section id="about" className="px-2 sm:px-4 mt-16">
+        <div className="text-5xl text-center relative">
+          <h2>A LITTLE <span className="bg-gradient-to-r from-blue-500 to-pink-500 text-transparent bg-clip-text inline-block">ABOUT</span> ME</h2>
+          <span className=""></span>
         </div>
         <div className="about-me-text">
           <p>A Software Engineer and a Full-Stack web developer with {experience}+ years experience. I love making an impact whenever am working a project, I like it when a project brings the best out of me or should I say I bring the best to any project. Ask me what I would bring to the table? I will bring the best. I also love solving problems especially that bug on the screen unseen so much that I think I was made for this. Not much of an extrovert but I believe Engineering is team work especially when the team works like a family.</p>
@@ -56,7 +58,7 @@ const Home = () => {
           <div className="overlay"></div>
           <div className="portfolio-contents">
             <div className="portfolio-text">
-              <p className='mk-jost'>Want to know more about me, my projects and works?</p>
+              <p className="">Want to know more about me, my projects and works?</p>
             </div>
             <div className="portfolio-btns">
               <a href="https://github.com/Victor-Okenwa" data-aos="slide-right" target='_blank' rel="noreferrer" className='btn'>
@@ -133,7 +135,7 @@ const Home = () => {
         <div className="container-fluid">
           <h4>I use my skills and tools to deliver cutting edge products based on your prefrence, view more on my resume</h4>
           <div className="skills-slider">
-            <OwlSlider />
+            {/* <OwlSlider /> */}
           </div>
         </div>
       </section>
