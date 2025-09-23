@@ -58,7 +58,7 @@ const Nav = () => {
                             </a>
                         </li>
 
-                        <li className="">
+                        {/* <li className="">
                             <a href='#services'
                                 className={cn(" [&>*]:transition-transform [&>*]:ease-linear [&>*]:duration-300 [&>:*]delay-75",
                                     { "[&>span]:translate-y-[100%] [&>svg]:translate-y-[50%]": currentSection === 'services' })}
@@ -66,7 +66,7 @@ const Nav = () => {
                                 <CogIcon />
                                 <span>services</span>
                             </a>
-                        </li>
+                        </li> */}
 
                         <li className="">
                             <a href='#skills'
