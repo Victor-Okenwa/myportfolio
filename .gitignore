@@ -22,7 +22,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-
 .history
 pnpm-debug.log*
 .vscode/*
@@ -30,7 +29,5 @@ pnpm-debug.log*
 pnpm-lock.yaml
 
 dist
-
 build
-
 .firebase
