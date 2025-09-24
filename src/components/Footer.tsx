@@ -1,10 +1,8 @@
-import { faFacebookF, faFacebookSquare, faGithub, faLinkedin, faLinkedinIn, faUpwork, faXTwitter } from '@fortawesome/free-brands-svg-icons';
-import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faFacebookF, faGithub, faLinkedinIn, faXTwitter } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Button } from './ui/button';
 import { Lightbulb, MailIcon } from 'lucide-react';
 const Footer = () => {
-    const today = new Date();
     return (
         <footer className="relative bg-gradient-to-r from-black to-slate-900 px-4 py-14 border-t-2 ">
             <div className=" absolute flex items-center justify-center [&>svg]:size-9 -top-6 shadow-sm shadow-slate-200 size-12 rounded-full bg-gradient-to-r from-blue-500 to-pink-400 up-down-continuous">

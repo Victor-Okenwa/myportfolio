@@ -1,20 +1,15 @@
 import { cn } from '@/lib/utils';
-import { faBars, faBriefcase, faCogs, faHome, faMobileAlt, faMoon, faQuoteLeft, faSun, faTimes, faTools } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useStoreActions, useStoreState } from 'easy-peasy';
-import { useEffect, useState } from 'react';
-import { Briefcase, CogIcon, HomeIcon, MenuIcon, PhoneCallIcon, QuoteIcon, ToolCase, XIcon } from "lucide-react"
+import { Briefcase, HomeIcon, MenuIcon, PhoneCallIcon, QuoteIcon, XIcon } from "lucide-react"
 import { useApp } from '@/context/app-provider';
 import { Button } from './ui/button';
+import { useState } from 'react';
 
 const Nav = () => {
-    const { currentSection, setCurrentSection, scrollPosition } = useApp();
-
+    const { currentSection, setCurrentSection } = useApp();
     const [navToggle, setNavToggle] = useState(false);
     const handleNavToggle = () => {
         navToggle ? setNavToggle(false) : setNavToggle(true);
     }
-
 
     return (
         <nav className="w-full flex justify-end md:pr-10 fixed top-0 z-40">
@@ -55,35 +50,6 @@ const Nav = () => {
                                 onClick={() => setCurrentSection('portfolio')}>
                                 <Briefcase />
                                 <span>portfolio</span>
-                            </a>
-                        </li>
-
-                        {/* <li className="">
-                            <a href='#services'
-                                className={cn(" [&>*]:transition-transform [&>*]:ease-linear [&>*]:duration-300 [&>:*]delay-75",
-                                    { "[&>span]:translate-y-[100%] [&>svg]:translate-y-[50%]": currentSection === 'services' })}
-                                onClick={() => setCurrentSection('services')}>
-                                <CogIcon />
-                                <span>services</span>
-                            </a>
-                        </li> */}
-
-                        <li className="">
-                            <a href='#skills'
-                                className={cn(" [&>*]:transition-transform [&>*]:ease-linear [&>*]:duration-300 [&>:*]delay-75",
-                                    { "[&>span]:translate-y-[100%] [&>svg]:translate-y-[50%]": currentSection === 'skills' })}
-                                onClick={() => setCurrentSection('skills')}>
-                                <ToolCase />
-                                <span>skills</span>
-                            </a>
-                        </li>
-                        <li className="">
-                            <a href='#contact'
-                                className={cn(" [&>*]:transition-transform [&>*]:ease-linear [&>*]:duration-300 [&>:*]delay-75",
-                                    { "[&>span]:translate-y-[100%] [&>svg]:translate-y-[50%]": currentSection === 'contact' })}
-                                onClick={() => setCurrentSection('contact')}>
-                                <PhoneCallIcon />
-                                <span>contact</span>
                             </a>
                         </li>
                     </ul>
