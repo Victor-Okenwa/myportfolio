@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils';
-import { Briefcase, HomeIcon, MenuIcon, PhoneCallIcon, QuoteIcon, XIcon } from "lucide-react"
+import { Briefcase, HomeIcon, MenuIcon, QuoteIcon, XIcon } from "lucide-react"
 import { useApp } from '@/context/app-provider';
 import { Button } from './ui/button';
 import { useState } from 'react';
@@ -26,7 +26,7 @@ const Nav = () => {
                     <ul className="flex max-md:flex-col max-md:gap-5 text-sm [&>li>a]:overflow-hidden [&>li>a]:capitalize [&>li>a]:px-2 [&>li>a]:flex [&>li>a]:items-center [&>li>a]:flex-col [&>li>a>svg]:size-6 [&>li>a>svg]:text-foreground/90 [&>li>a>span]:bg-gradient-to-r [&>li>a>span]:from-blue-500 [&>li>a>span]:to-pink-500 [&>li>a>span]:text-transparent [&>li>a>span]:bg-clip-text [&>li>a>span]:inline-block">
                         <li className="">
                             <a href='#home'
-                                className={cn(" [&>*]:transition-transform [&>*]:ease-linear [&>*]:duration-300 [&>:*]delay-75",
+                                className={cn("[&>*]:transition-transform [&>*]:ease-linear [&>*]:duration-300 [&>:*]delay-75",
                                     { "[&>span]:translate-y-[100%] [&>svg]:translate-y-[50%]": currentSection === 'home' })}
                                 onClick={() => setCurrentSection('home')}>
                                 <HomeIcon />
@@ -35,7 +35,7 @@ const Nav = () => {
                         </li>
                         <li className="">
                             <a href='#about'
-                                className={cn(" [&>*]:transition-transform [&>*]:ease-linear [&>*]:duration-300 [&>:*]delay-75",
+                                className={cn("[&>*]:transition-transform [&>*]:ease-linear [&>*]:duration-300 [&>:*]delay-75",
                                     { "[&>span]:translate-y-[100%] [&>svg]:translate-y-[50%]": currentSection === 'about' })}
                                 onClick={() => setCurrentSection('about')}>
                                 <QuoteIcon />
@@ -45,8 +45,8 @@ const Nav = () => {
 
                         <li className="">
                             <a href='#portfolio'
-                                className={cn(" transition-all duration-300 ease-in-out",
-                                    { "[&>span]:translate-y-[100%] [&>svg]:translate-y-[50%] [&>*]:transition-transform [&>*]:ease-linear [&>*]:duration-300 [&>:*]delay-75": currentSection === 'portfolio' })}
+                                className={cn("[&>*]:transition-transform [&>*]:ease-linear [&>*]:duration-300 [&>:*]delay-75",
+                                    { "[&>span]:translate-y-[100%] [&>svg]:translate-y-[50%]": currentSection === 'portfolio' })}
                                 onClick={() => setCurrentSection('portfolio')}>
                                 <Briefcase />
                                 <span>portfolio</span>

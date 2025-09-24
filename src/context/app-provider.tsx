@@ -16,8 +16,22 @@ interface AppProviderProps {
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
 export default function AppProvider({ children }: AppProviderProps): JSX.Element {
+    const [isLoading, setIsLoading] = useState<boolean>(false);
+    const [currentSection, setCurrentSection] = useState("home");
 
-    const [isLoading, setIsLoading] = useState<boolean>(true); const [currentSection, setCurrentSection] = useState("home");
+    useEffect(() => {
+        setIsLoading(false);
+        window.addEventListener("DOMContentLoaded", () => handleLoad());
+        const handleLoad = () => {
+            setTimeout(() => {
+                setIsLoading(false);
+            }, 800);
+        };
+
+        return () => {
+            window.removeEventListener("DOMContentLoaded", handleLoad);
+        };
+    }, []);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -38,22 +52,6 @@ export default function AppProvider({ children }: AppProviderProps): JSX.Element
 
         return () => {
             window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
-
-    useEffect(() => {
-        setIsLoading(true);
-
-        const handleLoad = () => {
-            setTimeout(() => {
-                setIsLoading(false);
-            }, 800);
-        };
-
-        window.addEventListener("load", () => handleLoad());
-
-        return () => {
-            window.removeEventListener("load", handleLoad);
         };
     }, []);
 
