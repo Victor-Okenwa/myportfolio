@@ -3,9 +3,6 @@ import { createContext, useContext, useEffect, useState, type JSX, type ReactNod
 interface AppContextType {
     isLoading: boolean;
     setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
-    scrollPosition: number;
-    setScrollPosition: React.Dispatch<React.SetStateAction<number>>;
-    handlePreload: () => void;
     currentSection: string;
     setCurrentSection: React.Dispatch<React.SetStateAction<string>>;
     // Add other methods/values to context interface
@@ -20,14 +17,7 @@ const AppContext = createContext<AppContextType | undefined>(undefined);
 
 export default function AppProvider({ children }: AppProviderProps): JSX.Element {
     const [isLoading, setIsLoading] = useState<boolean>(true);
-    const [scrollPosition, setScrollPosition] = useState(0);
     const [currentSection, setCurrentSection] = useState("home");
-
-    function handlePreload() {
-        setTimeout(() => {
-            setIsLoading(false);
-        }, 1050);
-    }
 
     useEffect(() => {
         const handleScroll = () => {
@@ -42,8 +32,6 @@ export default function AppProvider({ children }: AppProviderProps): JSX.Element
                     setCurrentSection(String(sectionId));
                 }
             });
-
-            setScrollPosition(scrollY);
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -57,9 +45,6 @@ export default function AppProvider({ children }: AppProviderProps): JSX.Element
     const value: AppContextType = {
         isLoading,
         setIsLoading,
-        scrollPosition,
-        setScrollPosition,
-        handlePreload,
         currentSection,
         setCurrentSection,
     };
