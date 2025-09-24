@@ -42,6 +42,23 @@ export default function AppProvider({ children }: AppProviderProps): JSX.Element
     }, []);
 
 
+    useEffect(() => {
+        setIsLoading(true);
+
+        const handleLoad = () => {
+            setTimeout(() => {
+                setIsLoading(false);
+            }, 800);
+        };
+
+        window.addEventListener('load', handleLoad);
+
+        return () => {
+            window.removeEventListener('load', handleLoad);
+        };
+    }, []);
+
+
     const value: AppContextType = {
         isLoading,
         setIsLoading,

@@ -6,7 +6,6 @@ export default {
     extend: {
       fontFamily: {
         "lexend": ["Lexend", "sans-serif"],
-        "aladin": ["Aladin", "cursive"],
       },
     },
   },
