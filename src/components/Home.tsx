@@ -30,7 +30,7 @@ const Home = () => {
 
   return (
     <main className="overflow-x-hidden">
-      <section id='home' className="relative min-h-screen w-screen bg-cover bg-center bg-fixed bg-[url('../../../public/images/codingman2.jpg')]">
+      <section id='home' className="relative min-h-screen w-screen bg-cover bg-center bg-fixed bg-[url('/images/codingman2.jpg')]">
         <div className="absolute bg-primary-foreground/80 backdrop-blur-xs size-full"></div>
         <div className="text-center absolute w-[95%] h-full flex justify-center items-center flex-col">
           <h1 className="text-5xl md:text-6xl bg-gradient-to-r from-blue-500 to-pink-500 text-transparent bg-clip-text inline-block" data-aos="slide-down">Hi, I am Victor</h1>
@@ -124,7 +124,7 @@ const Home = () => {
 
       <section id='portfolio' >
 
-        <div className="relative min-h-[60vh] bg-center bg-cover pt-20 bg-fixed bg-[url('../../../public/images/codinghand.jpg')]">
+        <div className="relative min-h-[60vh] bg-center bg-cover pt-20 bg-fixed bg-[url('/images/codinghand.jpg')]">
           <div>
             <div className="absolute top-0 h-full w-full z-0  bg-gradient-to-b from-background/60 to-black"></div>
             <div className="absolute w-full flex flex-col justify-center items-center">
@@ -209,7 +209,7 @@ const Home = () => {
               <img src="/images/everno.png"
                 data-aos="slide-right"
                 className="rounded-md w-full md:w-[50%] h-[300px] object-"
-                alt="react next js smart snippets" />
+                alt="everno" />
 
               <div className="flex flex-col max-w-xl" data-aos="slide-left" data-aos-delay="200">
                 <h3 className="text-xl sm:text-2xl md:text-3xl mb-2 drop-shadow-lg drop-shadow-violet-400">Everno</h3>
@@ -237,10 +237,10 @@ const Home = () => {
             </div>
 
             <div className="flex max-md:flex-col justify-between items-center gap-4">
-              <img src="/public/images/blog.jpg"
+              <img src="/images/blog.jpg"
                 data-aos="slide-right"
                 className="rounded-md w-full md:w-[50%] h-[400px] object-"
-                alt="react next js smart snippets" />
+                alt="php blog" />
 
               <div className="flex flex-col max-w-xl" data-aos="slide-left" data-aos-delay="200">
                 <h3 className="text-xl sm:text-2xl md:text-3xl mb-2 drop-shadow-lg drop-shadow-violet-400">Blog</h3>

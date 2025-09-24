@@ -16,8 +16,22 @@ interface AppProviderProps {
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
 export default function AppProvider({ children }: AppProviderProps): JSX.Element {
-    const [isLoading, setIsLoading] = useState<boolean>(true);
-    const [currentSection, setCurrentSection] = useState("home");
+    useEffect(() => {
+        setIsLoading(true);
+
+        const handleLoad = () => {
+            // setTimeout(() => {
+            setIsLoading(false);
+            // }, 800);
+        };
+
+        window.addEventListener("load", () => handleLoad());
+
+        return () => {
+            window.removeEventListener("load", handleLoad);
+        };
+    }, []);
+const [isLoading, setIsLoading] = useState<boolean>(true);    const [currentSection, setCurrentSection] = useState("home");
 
     useEffect(() => {
         const handleScroll = () => {
@@ -46,18 +60,17 @@ export default function AppProvider({ children }: AppProviderProps): JSX.Element
         setIsLoading(true);
 
         const handleLoad = () => {
-            setTimeout(() => {
-                setIsLoading(false);
-            }, 800);
+            // setTimeout(() => {
+            setIsLoading(false);
+            // }, 800);
         };
 
-        window.addEventListener('load', handleLoad);
+        window.addEventListener("load", () => handleLoad());
 
         return () => {
-            window.removeEventListener('load', handleLoad);
+            window.removeEventListener("load", handleLoad);
         };
     }, []);
-
 
     const value: AppContextType = {
         isLoading,
