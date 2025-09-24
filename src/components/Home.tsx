@@ -1,14 +1,11 @@
 import { useEffect, useRef } from 'react';
-import { faGithub, faTelegram } from '@fortawesome/free-brands-svg-icons';
-import { faBoxesAlt, faCode, faEnvelope, faDownload, faLightbulb, faPhoneSquare } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Typed from 'typed.js';
-import { useStoreActions } from 'easy-peasy';
 import { Button } from './ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { ChevronDownCircleIcon, FileBadge2 } from 'lucide-react';
 import { Dialog, DialogContent, DialogTrigger } from './ui/dialog';
-// import OwlSlider from './mySlider';
 
 const Home = () => {
   const el = useRef(null);

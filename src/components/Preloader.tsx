@@ -1,6 +1,5 @@
 import { useApp } from "@/context/app-provider";
 import { cn } from "@/lib/utils";
-import { useStoreActions, useStoreState } from "easy-peasy";
 import { useEffect } from "react";
 
 const Preloader = () => {

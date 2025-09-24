@@ -1,7 +1,6 @@
 import Nav from './components/Nav';
 import Home from './components/Home';
 import Footer from './components/Footer';
-import useWindowScroll from './components/hooks/useWindowScroll';
 import BackTop from './components/BackTop';
 import { useEffect } from 'react';
 import AOS from 'aos';
@@ -18,7 +17,7 @@ function App() {
   }, []);
 
   return (
-    <div className={`App dark`} >
+    <div className="dark">
       <Preloader />
       <Nav />
       <Home />
