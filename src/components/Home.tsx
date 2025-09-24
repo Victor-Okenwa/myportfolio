@@ -3,10 +3,11 @@ import { faGithub, faTelegram } from '@fortawesome/free-brands-svg-icons';
 import { faBoxesAlt, faCode, faEnvelope, faDownload, faLightbulb, faPhoneSquare } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Typed from 'typed.js';
-import MyModal from './MyModal';
 import { useStoreActions } from 'easy-peasy';
 import { Button } from './ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
+import { FileBadge2 } from 'lucide-react';
+import { Dialog, DialogContent, DialogTrigger } from './ui/dialog';
 // import OwlSlider from './mySlider';
 
 const Home = () => {
@@ -45,10 +46,10 @@ const Home = () => {
         </div>
       </section>
 
-      <section id="about" className="px-2 sm:px-4 py-24 bg-[linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_0.7px,transparent_1px)] bg-[size:207px_60px] bg-repeat">
+      <section id="about" className="px-2 sm:px-4 py-24 moving-grid bg-[linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_0.7px,transparent_1px)] bg-[size:290px_260px] bg-repeat">
         <div className="text-3xl md:text-5xl text-center relative flex flex-col justify-center items-center gap-1">
           <h2>A LITTLE <span className="bg-gradient-to-r from-blue-500 to-pink-500 text-transparent bg-clip-text inline-block">ABOUT</span> ME</h2>
-          <span className="h-0.5 max-w-md min-w-sm bg-gradient-to-r py-0.5 from-blue-500 to-pink-500 opacity-50"></span>
+          <span className="h-0.5 max-w-md min-w-sm bg-gradient-to-r py-0.5 from-blue-600 to-pink-600 opacity-50"></span>
           <span className="max-sm:hidden absolute rounded-full rounded-tr-none size-7 bg-gradient-to-r from-blue-500 to-pink-500 -top-2 right-[18.5%]" data-aos="flip-up"></span>
         </div>
         <div className="text-sm sm:text-md text-center mt-5 text-secondary-foreground/80 max-w-3xl mx-auto" data-aos="fade-up">
@@ -69,7 +70,7 @@ const Home = () => {
               <CardTitle className="text-2xl sm:text-3xl bg-gradient-to-r from-blue-500 to-pink-500 text-transparent bg-clip-text inline-block"
                 data-aos="slide-right">Lightning-Fast Development</CardTitle>
             </CardHeader>
-            <CardContent className='text-right' data-aos="slide-left" data-aos-delay="200">
+            <CardContent className='text-right font-aladin' data-aos="slide-left" data-aos-delay="200">
               Accelerate Your Vision into Reality
             </CardContent>
           </Card>
@@ -126,25 +127,45 @@ const Home = () => {
         </div>
       </section>
 
-      <section id='portfolio' className="bg-center bg-fixed bg-[url('../../../public/images/codinghand.jpg')]">
+      <section id='portfolio' className="relative min-h-[60vh] bg-center bg-cover py-20 bg-fixed bg-[url('../../../public/images/codinghand.jpg')]">
         <div className="">
-          <div className="overlay"></div>
-          <div className="portfolio-contents">
-            <div className="portfolio-text">
-              <p className="">Want to know more about me, and some of my experience?</p>
+          <div className="absolute top-0 h-full w-full z-0  bg-gradient-to-b from-background/60 to-background/90"></div>
+          <div className="absolute w-full flex flex-col justify-center items-center">
+            <div className="mb-2">
+              <h2 className="text-xl">Want to know more about me and my experience?</h2>
             </div>
-            <div className="portfolio-btns">
-              <Button>
-
-                <a href="https://github.com/Victor-Okenwa" data-aos="slide-right" target='_blank' rel="noreferrer" className='btn'>
+            <div className="flex gap-2">
+              <Button asChild>
+                <a
+                  href="https://github.com/Victor-Okenwa"
+                  className='text-secondary-foreground bg-gradient-to-r from-blue-700 to-pink-600'
+                  data-aos="slide-right"
+                  target='_blank'
+                  rel="noreferrer">
                   <FontAwesomeIcon icon={faGithub} />
                   View GitHub
                 </a>
               </Button>
 
-              <button type="button" className='btn' data-aos="slide-left" onClick={handleModalShow}>
-                <FontAwesomeIcon icon={faDownload} />
-                View CV</button>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button
+                    variant={"outline"}
+                    className="cursor-pointer bg-transparent outline-2"
+                    data-aos="slide-left">
+                    <FileBadge2 />
+                    View CV</Button>
+                </DialogTrigger>
+
+                <DialogContent>
+                  <iframe
+                    src="/My Resume (Victor Okenwa).pdf"
+                    width="100%"
+                    height="600px"
+                    title="PDF Viewer"
+                  />
+                </DialogContent>
+              </Dialog>
             </div>
           </div>
         </div>
@@ -204,8 +225,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      <MyModal />
     </main>
   )
 }
