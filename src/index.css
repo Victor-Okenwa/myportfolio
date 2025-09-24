@@ -908,6 +908,13 @@ li {
     background-size: 290px 260px;
     animation: moveGrid 20s linear infinite;
   }
+  .up-down-continuous {
+    animation: upDownContinuous 3s ease-in-out infinite;
+  }
+
+  .font-aladin {
+    font-family: Aladin, cursive;
+  }
 }
 
 @keyframes moveGrid {
@@ -917,4 +924,18 @@ li {
   100% {
     background-position: 290px 260px;
   }
+}
+
+
+@keyframes upDownContinuous {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+  
 }

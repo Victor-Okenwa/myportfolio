@@ -6,7 +6,7 @@ import Typed from 'typed.js';
 import { useStoreActions } from 'easy-peasy';
 import { Button } from './ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { FileBadge2 } from 'lucide-react';
+import { ChevronDownCircleIcon, FileBadge2 } from 'lucide-react';
 import { Dialog, DialogContent, DialogTrigger } from './ui/dialog';
 // import OwlSlider from './mySlider';
 
@@ -30,8 +30,6 @@ const Home = () => {
 
   const today = new Date();
   const experience = today.getFullYear() - 2021;
-
-  const handleModalShow = useStoreActions(action => action.handleModalShow);
 
   return (
     <main className="overflow-x-hidden">
@@ -127,104 +125,154 @@ const Home = () => {
         </div>
       </section>
 
-      <section id='portfolio' className="relative min-h-[60vh] bg-center bg-cover py-20 bg-fixed bg-[url('../../../public/images/codinghand.jpg')]">
-        <div className="">
-          <div className="absolute top-0 h-full w-full z-0  bg-gradient-to-b from-background/60 to-background/90"></div>
-          <div className="absolute w-full flex flex-col justify-center items-center">
-            <div className="mb-2">
-              <h2 className="text-xl">Want to know more about me and my experience?</h2>
+      <section id='portfolio' >
+
+        <div className="relative min-h-[60vh] bg-center bg-cover pt-20 bg-fixed bg-[url('../../../public/images/codinghand.jpg')]">
+          <div>
+            <div className="absolute top-0 h-full w-full z-0  bg-gradient-to-b from-background/60 to-black"></div>
+            <div className="absolute w-full flex flex-col justify-center items-center">
+              <div className="px-2 mb-2">
+                <h2 className="text-xl">Want to know more about me and my experience?</h2>
+              </div>
+              <div className="flex gap-2">
+                <Button asChild>
+                  <a
+                    href="https://github.com/Victor-Okenwa"
+                    className='text-secondary-foreground bg-gradient-to-r from-blue-700 to-pink-600'
+                    data-aos="slide-right"
+                    target='_blank'
+                    rel="noreferrer">
+                    <FontAwesomeIcon icon={faGithub} />
+                    View GitHub
+                  </a>
+                </Button>
+
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button
+                      variant={"outline"}
+                      className="cursor-pointer bg-transparent outline-2"
+                      data-aos="slide-left">
+                      <FileBadge2 />
+                      View CV</Button>
+                  </DialogTrigger>
+
+                  <DialogContent>
+                    <iframe
+                      src="/My Resume (Victor Okenwa).pdf"
+                      width="100%"
+                      height="600px"
+                      title="PDF Viewer"
+                    />
+                  </DialogContent>
+                </Dialog>
+              </div>
             </div>
-            <div className="flex gap-2">
-              <Button asChild>
-                <a
-                  href="https://github.com/Victor-Okenwa"
-                  className='text-secondary-foreground bg-gradient-to-r from-blue-700 to-pink-600'
-                  data-aos="slide-right"
-                  target='_blank'
-                  rel="noreferrer">
-                  <FontAwesomeIcon icon={faGithub} />
-                  View GitHub
-                </a>
-              </Button>
+          </div>
 
-              <Dialog>
-                <DialogTrigger asChild>
-                  <Button
-                    variant={"outline"}
-                    className="cursor-pointer bg-transparent outline-2"
-                    data-aos="slide-left">
-                    <FileBadge2 />
-                    View CV</Button>
-                </DialogTrigger>
+          <ChevronDownCircleIcon className="up-down-continuous absolute rounded-full bottom-0 left-[45%] md:left-[47.98%] size-10 md:size-16" />
+        </div>
 
-                <DialogContent>
-                  <iframe
-                    src="/My Resume (Victor Okenwa).pdf"
-                    width="100%"
-                    height="600px"
-                    title="PDF Viewer"
-                  />
-                </DialogContent>
-              </Dialog>
+        <div className="w-full pt-12 pb-36 px-4 moving-grid bg-center bg-[linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_0.7px,transparent_1px)] bg-[size:290px_260px] bg-repeat">
+          <div className="text-center">
+            <h2 className="text-2xl md:text-3xl bg-gradient-to-r from-blue-500 to-pink-500 text-transparent bg-clip-text inline-block uppercase">Some Of My Recent Personal Projects</h2>
+          </div>
+
+          <div className="flex flex-col gap-14 mt-10">
+            <div className="flex max-md:flex-col justify-between items-center gap-4">
+              <img src="/images/react-smart-snippets.jpg"
+                data-aos="slide-right"
+                className="rounded-md w-full md:w-[50%] h-[400px] object-cover"
+                alt="react next js smart snippets" />
+
+              <div className="flex flex-col max-w-xl" data-aos="slide-left" data-aos-delay="200">
+                <h3 className="text-xl sm:text-2xl md:text-3xl mb-2 drop-shadow-lg drop-shadow-violet-400">React Smart Snippets</h3>
+                <p className="text-secondary-foreground/70 mb-4 text-sm sm:text-md md:text-lg">
+                  A collection of reusable React and Next JS components and hooks designed to streamline development with context awareness and enhance developer experience.
+                </p>
+                <div className="flex gap-2 flex-wrap">
+                  <span className="px-2 py-1 rounded-full bg-blue-500 w-fit">Typescript</span>
+                  <span className="px-2 py-1 rounded-full bg-yellow-400 w-fit text-secondary">JavaScript</span>
+                  <span className="px-2 py-1 rounded-full bg-blue-600 w-fit">VSIX</span>
+                </div>
+
+                <div className="flex gap-2 flex-wrap mt-7">
+                  <Button asChild className="flex-1 text-white py-6 rounded-full bg-gradient-to-r from-blue-700 to-pink-600">
+                    <a target="_blank" href="https://github.com/Victor-Okenwa/react-next-js-snippets">View Source code</a>
+                  </Button>
+                  <Button asChild variant={"outline"} className="flex-1 py-6 bg-transparent rounded-full ">
+                    <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=morse-code.react-next-js-smart-snippets">Visit Marketplace</a>
+                  </Button>
+                </div>
+              </div>
+
+            </div>
+
+            <div className="flex max-md:flex-col justify-between items-center gap-4">
+              <img src="/images/everno.png"
+                data-aos="slide-right"
+                className="rounded-md w-full md:w-[50%] h-[300px] object-"
+                alt="react next js smart snippets" />
+
+              <div className="flex flex-col max-w-xl" data-aos="slide-left" data-aos-delay="200">
+                <h3 className="text-xl sm:text-2xl md:text-3xl mb-2 drop-shadow-lg drop-shadow-violet-400">Everno</h3>
+                <p className="text-secondary-foreground/70 mb-4 text-sm sm:text-md md:text-lg">
+                  An interactive data visualization dashboard aimed at simplifying the use of dashboard and visualization tools by giving you the needed and most basic features.
+                </p>
+                <div className="flex gap-2 flex-wrap">
+                  <span className="px-2 py-1 text-xs sm:text-sm rounded-full bg-black shadow-sm shadow-slate-600 w-fit">Next Js</span>
+                  <span className="px-2 py-1 text-xs sm:text-sm rounded-full bg-blue-500 w-fit">Typescript</span>
+                  <span className="px-2 py-1 text-xs sm:text-sm rounded-full bg-yellow-400 w-fit text-secondary">JavaScript</span>
+                  <span className="px-2 py-1 text-xs sm:text-sm rounded-full bg-purple-600 w-fit">CSS</span>
+                  <span className="px-2 py-1 text-xs sm:text-sm rounded-full bg-orange-600 w-fit">HTML</span>
+                </div>
+
+                <div className="flex gap-2 flex-wrap mt-7">
+                  <Button asChild className="flex-1 text-white py-6 rounded-full bg-gradient-to-r from-blue-700 to-pink-600">
+                    <a target="_blank" href="https://github.com/Victor-Okenwa/everno">View Source code</a>
+                  </Button>
+                  <Button asChild variant={"outline"} className="flex-1 py-6 bg-transparent rounded-full ">
+                    <a target="_blank" href="https://everno.vercel.app/">View Live Demo</a>
+                  </Button>
+                </div>
+              </div>
+
+            </div>
+
+            <div className="flex max-md:flex-col justify-between items-center gap-4">
+              <img src="/public/images/blog.jpg"
+                data-aos="slide-right"
+                className="rounded-md w-full md:w-[50%] h-[400px] object-"
+                alt="react next js smart snippets" />
+
+              <div className="flex flex-col max-w-xl" data-aos="slide-left" data-aos-delay="200">
+                <h3 className="text-xl sm:text-2xl md:text-3xl mb-2 drop-shadow-lg drop-shadow-violet-400">Blog</h3>
+                <p className="text-secondary-foreground/70 mb-4 text-sm sm:text-md md:text-lg">
+                  A personal blog built with PHP, featuring a clean design, responsive layout, and easy navigation for sharing thoughts and ideas.
+                </p>
+                <div className="flex gap-2 flex-wrap">
+                  <span className="px-2 py-1 text-xs sm:text-sm rounded-full bg-[#4f5d95] w-fit">PHP</span>
+                  <span className="px-2 py-1 text-xs sm:text-sm rounded-full bg-yellow-400 w-fit text-secondary">JavaScript</span>
+                  <span className="px-2 py-1 text-xs sm:text-sm rounded-full bg-purple-600 w-fit">CSS</span>
+                  <span className="px-2 py-1 text-xs sm:text-sm rounded-full bg-orange-600 w-fit">HTML</span>
+                  <span className="px-2 py-1 text-xs sm:text-sm rounded-full bg-[#c6538c] w-fit">SCSS</span>
+                </div>
+
+                <div className="flex gap-2 flex-wrap mt-7">
+                  <Button asChild className="flex-1 text-white py-6 rounded-full bg-gradient-to-r from-blue-700 to-pink-600">
+                    <a target="_blank" href="https://github.com/Victor-Okenwa/everno">View Source code</a>
+                  </Button>
+                  <Button asChild variant={"outline"} className="flex-1 py-6 bg-transparent rounded-full ">
+                    <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=morse-code.react-next-js-smart-snippets">View Live Demo</a>
+                  </Button>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
       </section>
 
-      <section id='skills' className="skills">
-        <div className="overlay"></div>
-        <div className="container-fluid">
-          <h4>I use my skills and tools to deliver cutting edge products based on your prefrence, view more on my resume</h4>
-          <div className="skills-slider">
-            {/* <OwlSlider /> */}
-          </div>
-        </div>
-      </section>
-
-      <section id='contact' className="contact">
-        <div className="section-head">
-          <h2>get in touch</h2>
-        </div>
-        <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-lg-4 col-md-6" data-aos="fade-left">
-              <div className="contact-box">
-                <div className="content">
-                  <div className="contact-icon">
-                    <FontAwesomeIcon icon={faEnvelope} />
-                  </div>
-                  <p>okenwavictor003@gmail.com</p>
-                </div>
-                <div className="contact-overlay">My Email</div>
-              </div>
-            </div>
-
-            <div className="col-lg-4 col-md-6" data-aos="flip-up">
-              <div className="contact-box">
-                <div className="content">
-                  <div className="contact-icon">
-                    <FontAwesomeIcon icon={faTelegram} />
-                  </div>
-                  <p>+2348062852964</p>
-                </div>
-                <div className="contact-overlay"><p>Call/Telegram</p></div>
-              </div>
-            </div>
-
-            <div className="col-lg-4 col-md-6" data-aos="fade-right">
-              <div className="contact-box">
-                <div className="content">
-                  <div className="contact-icon">
-                    <FontAwesomeIcon icon={faPhoneSquare} />
-                  </div>
-                  <p>+2349150696301</p>
-                </div>
-                <div className="contact-overlay"><p>Call/Whatsapp</p></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </main>
   )
 }
