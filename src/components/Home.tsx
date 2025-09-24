@@ -5,7 +5,7 @@ import Typed from 'typed.js';
 import { Button } from './ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { ChevronDownCircleIcon, FileBadge2 } from 'lucide-react';
-import { Dialog, DialogContent, DialogTrigger } from './ui/dialog';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from './ui/dialog';
 
 const Home = () => {
   const el = useRef(null);
@@ -31,8 +31,8 @@ const Home = () => {
   return (
     <main className="overflow-x-hidden">
       <section id='home' className="relative min-h-screen w-screen bg-cover bg-center bg-fixed bg-[url('/images/codingman2.jpg')]">
-        <div className="absolute bg-primary-foreground/80 backdrop-blur-xs size-full"></div>
-        <div className="text-center absolute w-[95%] h-full flex justify-center items-center flex-col">
+        <div className="absolute top-0 bottom-0 bg-primary-foreground/80 backdrop-blur-xs w-full min-h-screen"></div>
+        <div className="text-center px-[0.6px] absolute w-[95%] h-full flex justify-center items-center flex-col">
           <h1 className="text-5xl md:text-6xl bg-gradient-to-r from-blue-500 to-pink-500 text-transparent bg-clip-text inline-block" data-aos="slide-down">Hi, I am Victor</h1>
           <div className="text-2xl md:text-3xl mt-2 text-secondary-foreground/80" data-aos="slide-up">
             <span className="" ref={el}></span>
@@ -124,12 +124,12 @@ const Home = () => {
 
       <section id='portfolio' >
 
-        <div className="relative min-h-[60vh] bg-center bg-cover pt-20 bg-fixed bg-[url('/images/codinghand.jpg')]">
+        <div className="relative h-[60vh] bg-center bg-cover pt-20 bg-fixed bg-[url('/images/codinghand.jpg')]">
           <div>
-            <div className="absolute top-0 h-full w-full z-0  bg-gradient-to-b from-background/60 to-black"></div>
+            <div className="absolute top-0 h-[60.4vh] w-full z-0  bg-gradient-to-b from-background/60 to-black"></div>
             <div className="absolute w-full flex flex-col justify-center items-center">
               <div className="px-2 mb-2">
-                <h2 className="text-xl">Want to know more about me and my experience?</h2>
+                <h2 className="text-xl text-center">Want to know more about me and my experience?</h2>
               </div>
               <div className="flex gap-2">
                 <Button asChild>
@@ -144,23 +144,43 @@ const Home = () => {
                   </a>
                 </Button>
 
+                <Button
+                  asChild
+                  variant={"outline"}
+                  className="cursor-pointer bg-transparent outline-2"
+                  data-aos="slide-left">
+                  <a
+                    href="/My Resume (Victor Okenwa).pdf"
+                    download="My Resume (Victor Okenwa).pdf"
+                    className='flex items-center gap-2 text-secondary-foreground'
+                  >
+                    <FileBadge2 />
+                    Download CV
+                  </a>
+                </Button>
                 <Dialog>
                   <DialogTrigger asChild>
-                    <Button
-                      variant={"outline"}
-                      className="cursor-pointer bg-transparent outline-2"
-                      data-aos="slide-left">
-                      <FileBadge2 />
-                      View CV</Button>
                   </DialogTrigger>
 
-                  <DialogContent>
-                    <iframe
-                      src="/My Resume (Victor Okenwa).pdf"
-                      width="100%"
-                      height="600px"
-                      title="PDF Viewer"
-                    />
+                  <DialogContent className="max-w-3xl w-full bg-black/80">
+                    <DialogHeader>
+                      <DialogTitle>My Resume</DialogTitle>
+                      <DialogDescription className='sr-only'>my resume</DialogDescription>
+                    </DialogHeader>
+
+                    <div className="h-60vh overflow-y-auto">
+                      <object
+                        data="/My Resume (Victor Okenwa).pdf"
+                        type="application/pdf"
+                        width="100%"
+                        height="100px"
+                      >
+                        <p>
+                          Your browser does not support PDFs. <br />
+                          <a href="your-document.pdf">Download the PDF</a> instead.
+                        </p>
+                      </object>
+                    </div>
                   </DialogContent>
                 </Dialog>
               </div>
