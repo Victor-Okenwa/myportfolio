@@ -172,12 +172,13 @@ const Home = () => {
                   className="cursor-pointer bg-transparent outline-2"
                   data-aos="slide-left">
                   <a
-                    href="/My Resume (Victor Okenwa).pdf"
+                    href="https://drive.google.com/file/d/1W1U2qgN6Ej9n2ri3Iyf3rLS7I0EU1dQg/view?usp=sharing"
                     download="My Resume (Victor Okenwa).pdf"
                     className='flex items-center gap-2 text-secondary-foreground'
-                  >
+                    target='_blank'
+                    rel="noopener">
                     <FileBadge2 />
-                    Download CV
+                    View CV
                   </a>
                 </Button>
                 <Dialog>
@@ -322,12 +323,12 @@ const Home = () => {
                 <p className="text-secondary-foreground/70 mb-4 text-sm sm:text-md md:text-lg">
                   An interactive data visualization dashboard aimed at simplifying the use of dashboard and visualization tools by giving you the needed and most basic features.
                 </p>
-                <div className="flex gap-2 flex-wrap">
-                  <span className={`px-2 py-1 text-xs sm:text-sm rounded-full ${toolsColor['next.js']} shadow-sm shadow-slate-600 w-fit`}>Next Js</span>
-                  <span className={`px-2 py-1 text-xs sm:text-sm rounded-full ${toolsColor['typescript']} w-fit`}>Typescript</span>
-                  <span className={`px-2 py-1 text-xs sm:text-sm rounded-full ${toolsColor['javaScript']} w-fit text-secondary`}>JavaScript</span>
-                  <span className={`px-2 py-1 text-xs sm:text-sm rounded-full ${toolsColor['css']} w-fit`}>CSS</span>
-                  <span className={`px-2 py-1 text-xs sm:text-sm rounded-full ${toolsColor['html']} w-fit`}>HTML</span>
+                <div className="flex gap-2 flex-wrap *:text-xs!">
+                  <span className={`px-2 py-1 rounded-full ${toolsColor['next.js']} shadow-sm shadow-slate-600 w-fit`}>Next Js</span>
+                  <span className={`px-2 py-1 rounded-full ${toolsColor['typescript']} w-fit`}>Typescript</span>
+                  <span className={`px-2 py-1 rounded-full ${toolsColor['javaScript']} w-fit text-secondary`}>JavaScript</span>
+                  <span className={`px-2 py-1 rounded-full ${toolsColor['css']} w-fit`}>CSS</span>
+                  <span className={`px-2 py-1 rounded-full ${toolsColor['html']} w-fit`}>HTML</span>
                 </div>
 
                 <div className="flex gap-2 flex-wrap mt-7">
@@ -353,21 +354,21 @@ const Home = () => {
                 <p className="text-secondary-foreground/70 mb-4 text-sm sm:text-md md:text-lg">
                   A personal blog built with PHP, featuring a clean design, responsive layout, and easy navigation for sharing thoughts and ideas.
                 </p>
-                <div className="flex gap-2 flex-wrap">
-                  <span className={`px-2 py-1 text-xs sm:text-sm rounded-full ${toolsColor['php']} w-fit`}>PHP</span>
-                  <span className="px-2 py-1 text-xs sm:text-sm rounded-full bg-yellow-400 w-fit text-secondary">JavaScript</span>
-                  <span className={`px-2 py-1 text-xs sm:text-sm rounded-full ${toolsColor['css']} w-fit`}>CSS</span>
-                  <span className={`px-2 py-1 text-xs sm:text-sm rounded-full ${toolsColor['html']} w-fit`}>HTML</span>
-                  <span className={`px-2 py-1 text-xs sm:text-sm rounded-full ${toolsColor['scss']} w-fit`}>SCSS</span>
+                <div className="flex gap-2 flex-wrap *:text-xs!">
+                  <span className={`px-2 py-1 rounded-full ${toolsColor['php']} w-fit`}>PHP</span>
+                  <span className="px-2 py-1 rounded-full bg-yellow-400 w-fit text-secondary">JavaScript</span>
+                  <span className={`px-2 py-1 rounded-full ${toolsColor['css']} w-fit`}>CSS</span>
+                  <span className={`px-2 py-1 rounded-full ${toolsColor['html']} w-fit`}>HTML</span>
+                  <span className={`px-2 py-1 rounded-full ${toolsColor['scss']} w-fit`}>SCSS</span>
                 </div>
 
                 <div className="flex gap-2 flex-wrap mt-7">
                   <Button asChild className="flex-1 text-white py-6 rounded-full bg-gradient-to-r from-blue-700 to-pink-600">
                     <a target="_blank" rel="noopener" href="https://github.com/Victor-Okenwa/everno">View Source code</a>
                   </Button>
-                  <Button asChild variant={"outline"} className="flex-1 py-6 bg-transparent rounded-full ">
+                  {/* <Button asChild variant={"outline"} className="flex-1 py-6 bg-transparent rounded-full ">
                     <a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=morse-code.react-next-js-smart-snippets">View Live Demo</a>
-                  </Button>
+                  </Button> */}
                 </div>
               </div>
 
