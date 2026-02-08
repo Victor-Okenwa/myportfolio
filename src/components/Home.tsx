@@ -7,11 +7,33 @@ import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { ChevronDownCircleIcon, FileBadge2 } from 'lucide-react';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from './ui/dialog';
 
+
+const toolsColor = {
+  "html": 'bg-orange-600 text-primary',
+  "css": 'bg-blue-500 text-primary',
+  "scss": 'bg-purple-500',
+  "javaScript": 'bg-yellow-400 text-secondary',
+  "react": 'bg-blue-600 text-secondary',
+  "next.js": 'bg-black',
+  "tailwind css": 'bg-sky-500 text-secondary',
+  "typescript": 'bg-blue-500',
+  "node.js": 'bg-green-500 text-secondary',
+  "mongodb": 'bg-green-500 text-secondary',
+  "mysql": 'bg-blue-500',
+  "postgresql": 'bg-blue-500 text-secondary',
+  "docker": 'bg-blue-500 text-secondary',
+  "vsix": 'bg-blue-600',
+  "php": 'bg-purple-700 text-primary',
+  "trpc": 'bg-popover-foreground text-blue-600',
+  "turbo": 'bg-red-600 text-primary',
+  "zerodb": 'bg-primary text-primary-foreground',
+}
+
 const Home = () => {
   const el = useRef(null);
   useEffect(() => {
     const typed = new Typed(el.current, {
-      strings: ['Designer', 'Developer', 'Programmer', 'Engineer', 'Creator', 'Freelancer'],
+      strings: ['Designer', 'Developer', 'Programmer', 'Thinker', 'Engineer', 'Creator', 'Freelancer'],
       showCursor: false,
       loop: true,
       typeSpeed: 100,
@@ -138,7 +160,7 @@ const Home = () => {
                     className='text-secondary-foreground bg-gradient-to-r from-blue-700 to-pink-600'
                     data-aos="slide-right"
                     target='_blank'
-                    rel="noreferrer">
+                    rel="noopener">
                     <FontAwesomeIcon icon={faGithub} />
                     View GitHub
                   </a>
@@ -197,6 +219,70 @@ const Home = () => {
 
           <div className="flex flex-col gap-14 mt-10">
             <div className="flex max-md:flex-col justify-between items-center gap-4">
+              <img src="/images/code-to-play.jpg"
+                data-aos="slide-right"
+                className="rounded-md w-full md:w-[50%] h-[400px] object-cover"
+                alt="code-to-play" />
+
+              <div className="flex flex-col max-w-xl" data-aos="slide-left" data-aos-delay="200">
+                <h3 className="text-xl sm:text-2xl md:text-3xl mb-2 drop-shadow-lg drop-shadow-violet-400">Code To Play</h3>
+                <p className="text-secondary-foreground/70 mb-4 text-sm sm:text-md md:text-lg">
+                  Code to Play gamifies your coding experience by unlocking fun mini-games
+                  as you write code. Every 100 lines unlocks 5 plays across all games.
+                  Track your progress, compete against your high scores, and take fun
+                  breaks without leaving VS Code.
+                </p>
+                <div className="flex gap-2 flex-wrap  *:text-xs!">
+                  <span className={`px-2 py-1 rounded-full ${toolsColor['typescript']} w-fit`}>Typescript</span>
+                  <span className={`px-2 py-1 rounded-full ${toolsColor['javaScript']} w-fit`}>JavaScript</span>
+                  <span className={`px-2 py-1 rounded-full ${toolsColor['html']} w-fit`}>HTML</span>
+                  <span className={`px-2 py-1 rounded-full ${toolsColor['vsix']} w-fit`}>VSIX</span>
+                </div>
+
+                <div className="flex gap-2 flex-wrap mt-7">
+                  <Button asChild className="flex-1 text-white py-6 rounded-full bg-gradient-to-r from-blue-700 to-pink-600">
+                    <a target="_blank" rel="noopener" href="https://github.com/Victor-Okenwa/code-to-play">View Source code</a>
+                  </Button>
+                  <Button asChild variant={"outline"} className="flex-1 py-6 bg-transparent rounded-full ">
+                    <a target="_blank" rel="noopener" href="https://open-vsx.org/extension/morse-code/code-to-play">Visit Marketplace</a>
+                  </Button>
+                </div>
+              </div>
+
+            </div>
+
+            <div className="flex max-md:flex-col justify-between items-center gap-4">
+              <img src="/images/next-oral.png"
+                data-aos="slide-right"
+                className="rounded-md w-full md:w-[50%] h-[400px] object-cover"
+                alt="next oral" />
+
+              <div className="flex flex-col max-w-xl" data-aos="slide-left" data-aos-delay="200">
+                <h3 className="text-xl sm:text-2xl md:text-3xl mb-2 drop-shadow-lg drop-shadow-violet-400">Next Oral</h3>
+                <p className="text-secondary-foreground/70 mb-4 text-sm sm:text-md md:text-lg">
+                  Next Oral is a platform that helps dental clinics manage Bookings, Appointments, Patients, Treatments and Payments easily and efficiently.
+                </p>
+                <div className="flex gap-2 flex-wrap *:text-xs!">
+                  <span className={`px-2 py-1 rounded-full ${toolsColor['typescript']} w-fit`}>Typescript</span>
+                  <span className={`px-2 py-1 rounded-full ${toolsColor['next.js']} w-fit`}>Next Js</span>
+                  <span className={`px-2 py-1 rounded-full ${toolsColor['trpc']} w-fit`}>tRPC</span>
+                  <span className={`px-2 py-1 rounded-full ${toolsColor['docker']} w-fit`}>Docker</span>
+                  <span className={`px-2 py-1 rounded-full ${toolsColor['zerodb']} w-fit`}>Zero</span>
+                  <span className={`px-2 py-1 rounded-full ${toolsColor['turbo']} w-fit`}>Turbo</span>
+                  <span className={`px-2 py-1 rounded-full ${toolsColor['next.js']} w-fit`}>Caddy</span>
+                </div>
+
+                <div className="flex gap-2 flex-wrap mt-7">
+                  <Button asChild className="flex-1 text-white py-6 rounded-full bg-gradient-to-r from-blue-700 to-pink-600">
+                    <a target="_blank" rel="noopener" href="https://nextoral.com">Visit Website</a>
+                  </Button>
+                </div>
+              </div>
+
+            </div>
+
+
+            <div className="flex max-md:flex-col justify-between items-center gap-4">
               <img src="/images/react-smart-snippets.jpg"
                 data-aos="slide-right"
                 className="rounded-md w-full md:w-[50%] h-[400px] object-cover"
@@ -207,18 +293,18 @@ const Home = () => {
                 <p className="text-secondary-foreground/70 mb-4 text-sm sm:text-md md:text-lg">
                   A collection of reusable React and Next JS components and hooks designed to streamline development with context awareness and enhance developer experience.
                 </p>
-                <div className="flex gap-2 flex-wrap">
-                  <span className="px-2 py-1 rounded-full bg-blue-500 w-fit">Typescript</span>
-                  <span className="px-2 py-1 rounded-full bg-yellow-400 w-fit text-secondary">JavaScript</span>
-                  <span className="px-2 py-1 rounded-full bg-blue-600 w-fit">VSIX</span>
+                <div className="flex gap-2 flex-wrap *:text-xs">
+                  <span className={`px-2 py-1 rounded-full ${toolsColor['typescript']} w-fit`}>Typescript</span>
+                  <span className={`px-2 py-1 rounded-full ${toolsColor['javaScript']} w-fit text-secondary`}>JavaScript</span>
+                  <span className={`px-2 py-1 rounded-full ${toolsColor['vsix']} w-fit`}>VSIX</span>
                 </div>
 
                 <div className="flex gap-2 flex-wrap mt-7">
                   <Button asChild className="flex-1 text-white py-6 rounded-full bg-gradient-to-r from-blue-700 to-pink-600">
-                    <a target="_blank" href="https://github.com/Victor-Okenwa/react-next-js-snippets">View Source code</a>
+                    <a target="_blank" rel="noopener" href="https://github.com/Victor-Okenwa/react-next-js-snippets">View Source code</a>
                   </Button>
                   <Button asChild variant={"outline"} className="flex-1 py-6 bg-transparent rounded-full ">
-                    <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=morse-code.react-next-js-smart-snippets">Visit Marketplace</a>
+                    <a target="_blank" rel="noopener" href="https://open-vsx.org/extension/morse-code/react-next-js-smart-snippets">Visit Marketplace</a>
                   </Button>
                 </div>
               </div>
@@ -237,19 +323,19 @@ const Home = () => {
                   An interactive data visualization dashboard aimed at simplifying the use of dashboard and visualization tools by giving you the needed and most basic features.
                 </p>
                 <div className="flex gap-2 flex-wrap">
-                  <span className="px-2 py-1 text-xs sm:text-sm rounded-full bg-black shadow-sm shadow-slate-600 w-fit">Next Js</span>
-                  <span className="px-2 py-1 text-xs sm:text-sm rounded-full bg-blue-500 w-fit">Typescript</span>
-                  <span className="px-2 py-1 text-xs sm:text-sm rounded-full bg-yellow-400 w-fit text-secondary">JavaScript</span>
-                  <span className="px-2 py-1 text-xs sm:text-sm rounded-full bg-purple-600 w-fit">CSS</span>
-                  <span className="px-2 py-1 text-xs sm:text-sm rounded-full bg-orange-600 w-fit">HTML</span>
+                  <span className={`px-2 py-1 text-xs sm:text-sm rounded-full ${toolsColor['next.js']} shadow-sm shadow-slate-600 w-fit`}>Next Js</span>
+                  <span className={`px-2 py-1 text-xs sm:text-sm rounded-full ${toolsColor['typescript']} w-fit`}>Typescript</span>
+                  <span className={`px-2 py-1 text-xs sm:text-sm rounded-full ${toolsColor['javaScript']} w-fit text-secondary`}>JavaScript</span>
+                  <span className={`px-2 py-1 text-xs sm:text-sm rounded-full ${toolsColor['css']} w-fit`}>CSS</span>
+                  <span className={`px-2 py-1 text-xs sm:text-sm rounded-full ${toolsColor['html']} w-fit`}>HTML</span>
                 </div>
 
                 <div className="flex gap-2 flex-wrap mt-7">
                   <Button asChild className="flex-1 text-white py-6 rounded-full bg-gradient-to-r from-blue-700 to-pink-600">
-                    <a target="_blank" href="https://github.com/Victor-Okenwa/everno">View Source code</a>
+                    <a target="_blank" rel="noopener" href="https://github.com/Victor-Okenwa/everno">View Source code</a>
                   </Button>
                   <Button asChild variant={"outline"} className="flex-1 py-6 bg-transparent rounded-full ">
-                    <a target="_blank" href="https://everno.vercel.app/">View Live Demo</a>
+                    <a target="_blank" rel="noopener" href="https://everno.vercel.app/">View Live Demo</a>
                   </Button>
                 </div>
               </div>
@@ -268,19 +354,19 @@ const Home = () => {
                   A personal blog built with PHP, featuring a clean design, responsive layout, and easy navigation for sharing thoughts and ideas.
                 </p>
                 <div className="flex gap-2 flex-wrap">
-                  <span className="px-2 py-1 text-xs sm:text-sm rounded-full bg-[#4f5d95] w-fit">PHP</span>
+                  <span className={`px-2 py-1 text-xs sm:text-sm rounded-full ${toolsColor['php']} w-fit`}>PHP</span>
                   <span className="px-2 py-1 text-xs sm:text-sm rounded-full bg-yellow-400 w-fit text-secondary">JavaScript</span>
-                  <span className="px-2 py-1 text-xs sm:text-sm rounded-full bg-purple-600 w-fit">CSS</span>
-                  <span className="px-2 py-1 text-xs sm:text-sm rounded-full bg-orange-600 w-fit">HTML</span>
-                  <span className="px-2 py-1 text-xs sm:text-sm rounded-full bg-[#c6538c] w-fit">SCSS</span>
+                  <span className={`px-2 py-1 text-xs sm:text-sm rounded-full ${toolsColor['css']} w-fit`}>CSS</span>
+                  <span className={`px-2 py-1 text-xs sm:text-sm rounded-full ${toolsColor['html']} w-fit`}>HTML</span>
+                  <span className={`px-2 py-1 text-xs sm:text-sm rounded-full ${toolsColor['scss']} w-fit`}>SCSS</span>
                 </div>
 
                 <div className="flex gap-2 flex-wrap mt-7">
                   <Button asChild className="flex-1 text-white py-6 rounded-full bg-gradient-to-r from-blue-700 to-pink-600">
-                    <a target="_blank" href="https://github.com/Victor-Okenwa/everno">View Source code</a>
+                    <a target="_blank" rel="noopener" href="https://github.com/Victor-Okenwa/everno">View Source code</a>
                   </Button>
                   <Button asChild variant={"outline"} className="flex-1 py-6 bg-transparent rounded-full ">
-                    <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=morse-code.react-next-js-smart-snippets">View Live Demo</a>
+                    <a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=morse-code.react-next-js-smart-snippets">View Live Demo</a>
                   </Button>
                 </div>
               </div>
