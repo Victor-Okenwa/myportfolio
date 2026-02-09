@@ -313,9 +313,38 @@ const Home = () => {
             </div>
 
             <div className="flex max-md:flex-col justify-between items-center gap-4">
+              <img src="/images/crypto-to-cash.png"
+                data-aos="slide-right"
+                className="rounded-md w-full md:w-[50%] h-[400px] object-cover"
+                alt="crypto to cash" />
+
+              <div className="flex flex-col max-w-xl" data-aos="slide-left" data-aos-delay="200">
+                <h3 className="text-xl sm:text-2xl md:text-3xl mb-2 drop-shadow-lg drop-shadow-violet-400">Crypto To Cash</h3>
+                <p className="text-secondary-foreground/70 mb-4 text-sm sm:text-md md:text-lg">
+                  A platform that converts crypto currencies like (ETH, BTC, BNB) into its equivalent in fiat currencies like (GHS, EURO, USD, NGN). It uses coin gecko api to fetch for live currency values. 
+                </p>
+                <div className="flex gap-2 flex-wrap *:text-xs">
+                  <span className={`px-2 py-1 rounded-full ${toolsColor['typescript']} w-fit`}>Typescript</span>
+                  <span className={`px-2 py-1 rounded-full ${toolsColor['node.js']} w-fit text-secondary`}>Node Js</span>
+                  <span className={`px-2 py-1 rounded-full ${toolsColor['next.js']} w-fit`}>Next Js</span>
+                </div>
+
+                <div className="flex gap-2 flex-wrap mt-7">
+                  <Button asChild className="flex-1 text-white py-6 rounded-full bg-gradient-to-r from-blue-700 to-pink-600">
+                    <a target="_blank" rel="noopener" href="https://github.com/Victor-Okenwa/crypto-to-cash">View Source code</a>
+                  </Button>
+                  <Button asChild variant={"outline"} className="flex-1 py-6 bg-transparent rounded-full ">
+                    <a target="_blank" rel="noopener" href="https://crypto-to-cash-sigma.vercel.app/">View Demo</a>
+                  </Button>
+                </div>
+              </div>
+
+            </div>
+
+            <div className="flex max-md:flex-col justify-between items-center gap-4">
               <img src="/images/everno.png"
                 data-aos="slide-right"
-                className="rounded-md w-full md:w-[50%] h-[300px] object-"
+                className="rounded-md w-full md:w-[50%] h-[400px] object-cover"
                 alt="everno" />
 
               <div className="flex flex-col max-w-xl" data-aos="slide-left" data-aos-delay="200">
