@@ -13,9 +13,10 @@ const toolsColor = {
   "css": 'bg-blue-500 text-primary',
   "scss": 'bg-purple-500',
   "javaScript": 'bg-yellow-400 text-secondary',
-  "react": 'bg-blue-600 text-secondary',
-  "next.js": 'bg-black',
-  "tailwind css": 'bg-sky-500 text-secondary',
+  "react": 'bg-blue-600 text-primary',
+  "next": 'bg-primary-foreground text-primary',
+  "tailwind": 'bg-sky-500 text-secondary',
+  "vite": 'bg-purple-800 text-primary',
   "typescript": 'bg-blue-500',
   "node.js": 'bg-green-500 text-secondary',
   "mongodb": 'bg-green-500 text-secondary',
@@ -249,7 +250,6 @@ const Home = () => {
                   </Button>
                 </div>
               </div>
-
             </div>
 
             <div className="flex max-md:flex-col justify-between items-center gap-4">
@@ -265,12 +265,12 @@ const Home = () => {
                 </p>
                 <div className="flex gap-2 flex-wrap *:text-xs!">
                   <span className={`px-2 py-1 rounded-full ${toolsColor['typescript']} w-fit`}>Typescript</span>
-                  <span className={`px-2 py-1 rounded-full ${toolsColor['next.js']} w-fit`}>Next Js</span>
+                  <span className={`px-2 py-1 rounded-full ${toolsColor['next']} w-fit`}>Next Js</span>
                   <span className={`px-2 py-1 rounded-full ${toolsColor['trpc']} w-fit`}>tRPC</span>
                   <span className={`px-2 py-1 rounded-full ${toolsColor['docker']} w-fit`}>Docker</span>
                   <span className={`px-2 py-1 rounded-full ${toolsColor['zerodb']} w-fit`}>Zero</span>
                   <span className={`px-2 py-1 rounded-full ${toolsColor['turbo']} w-fit`}>Turbo</span>
-                  <span className={`px-2 py-1 rounded-full ${toolsColor['next.js']} w-fit`}>Caddy</span>
+                  <span className={`px-2 py-1 rounded-full ${toolsColor['next']} w-fit`}>Caddy</span>
                 </div>
 
                 <div className="flex gap-2 flex-wrap mt-7">
@@ -282,6 +282,36 @@ const Home = () => {
 
             </div>
 
+            <div className="flex max-md:flex-col justify-between items-center gap-4">
+              <img src="/images/how-the-internet-works.png"
+                data-aos="slide-right"
+                className="rounded-md w-full md:w-[50%] h-[400px] object-cover"
+                alt="next oral" />
+
+              <div className="flex flex-col max-w-xl" data-aos="slide-left" data-aos-delay="200">
+                <h3 className="text-xl sm:text-2xl md:text-3xl mb-2 drop-shadow-lg drop-shadow-violet-400">How the Internet Works</h3>
+                <p className="text-secondary-foreground/70 mb-4 text-sm sm:text-md md:text-lg">
+                  A platform that uses visual approach to explain how the internet works and how data move within and across networks.
+                  It also to convert IP and Mac Address to binary explaining how it works along the way.
+                </p>
+                <div className="flex gap-2 flex-wrap *:text-xs!">
+                  <span className={`px-2 py-1 rounded-full ${toolsColor['typescript']} w-fit`}>Typescript</span>
+                  <span className={`px-2 py-1 rounded-full ${toolsColor['vite']} w-fit`}>Vite</span>
+                  <span className={`px-2 py-1 rounded-full ${toolsColor['react']} w-fit`}>React</span>
+                  <span className={`px-2 py-1 rounded-full ${toolsColor['tailwind']} w-fit`}>Tailwind CSS</span>
+                </div>
+
+                <div className="flex gap-2 flex-wrap mt-7">
+                  <Button asChild className="flex-1 text-white py-6 rounded-full bg-gradient-to-r from-blue-700 to-pink-600">
+                    <a target="_blank" rel="noopener" href="https://how-the-internet-works.vercel.app">Visit Live Demo</a>
+                  </Button>
+                  <Button asChild variant={"outline"} className="flex-1 py-6 bg-transparent rounded-full ">
+                    <a target="_blank" rel="noopener" href="https://github.com/Victor-Okenwa/network-explorer">View Source code</a>
+                  </Button>
+                </div>
+              </div>
+
+            </div>
 
             <div className="flex max-md:flex-col justify-between items-center gap-4">
               <img src="/images/react-smart-snippets.jpg"
@@ -321,12 +351,12 @@ const Home = () => {
               <div className="flex flex-col max-w-xl" data-aos="slide-left" data-aos-delay="200">
                 <h3 className="text-xl sm:text-2xl md:text-3xl mb-2 drop-shadow-lg drop-shadow-violet-400">Crypto To Cash</h3>
                 <p className="text-secondary-foreground/70 mb-4 text-sm sm:text-md md:text-lg">
-                  A platform that converts crypto currencies like (ETH, BTC, BNB) into its equivalent in fiat currencies like (GHS, EURO, USD, NGN). It uses coin gecko api to fetch for live currency values. 
+                  A platform that converts crypto currencies like (ETH, BTC, BNB) into its equivalent in fiat currencies like (GHS, EURO, USD, NGN). It uses coin gecko api to fetch for live currency values.
                 </p>
                 <div className="flex gap-2 flex-wrap *:text-xs">
                   <span className={`px-2 py-1 rounded-full ${toolsColor['typescript']} w-fit`}>Typescript</span>
                   <span className={`px-2 py-1 rounded-full ${toolsColor['node.js']} w-fit text-secondary`}>Node Js</span>
-                  <span className={`px-2 py-1 rounded-full ${toolsColor['next.js']} w-fit`}>Next Js</span>
+                  <span className={`px-2 py-1 rounded-full ${toolsColor['next']} w-fit`}>Next Js</span>
                 </div>
 
                 <div className="flex gap-2 flex-wrap mt-7">
@@ -353,7 +383,7 @@ const Home = () => {
                   An interactive data visualization dashboard aimed at simplifying the use of dashboard and visualization tools by giving you the needed and most basic features.
                 </p>
                 <div className="flex gap-2 flex-wrap *:text-xs!">
-                  <span className={`px-2 py-1 rounded-full ${toolsColor['next.js']} shadow-sm shadow-slate-600 w-fit`}>Next Js</span>
+                  <span className={`px-2 py-1 rounded-full ${toolsColor['next']} shadow-sm shadow-slate-600 w-fit`}>Next Js</span>
                   <span className={`px-2 py-1 rounded-full ${toolsColor['typescript']} w-fit`}>Typescript</span>
                   <span className={`px-2 py-1 rounded-full ${toolsColor['javaScript']} w-fit text-secondary`}>JavaScript</span>
                   <span className={`px-2 py-1 rounded-full ${toolsColor['css']} w-fit`}>CSS</span>
